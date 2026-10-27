@@ -1,0 +1,28 @@
+<%- include('./partials/header'); %>
+
+<div class="container d-flex vh-100">
+  <div class="row justify-content-center align-self-center w-100">
+    <div class="col-md-8 text-center">
+      <div class="card shadow-lg p-4">
+        <div class="card-body">
+          <h2 class="card-title mb-4">📜 Mensagem do Dia</h2>
+
+          <% if (quote) { %>
+            <blockquote class="blockquote mb-4">
+              <p class="fs-4 italic">"<%= quote %>"</p>
+              <footer class="blockquote-footer mt-2">Ron Swanson</footer>
+            </blockquote>
+          <% } else if (error) { %>
+            <div class="alert alert-danger" role="alert">
+              <%= error %>
+            </div>
+          <% } %>
+
+          <a href="/" class="btn btn-primary btn-lg mt-3">Gerar Nova Mensagem</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<%- include('./partials/footer'); %>
